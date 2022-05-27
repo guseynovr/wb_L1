@@ -21,13 +21,12 @@ func main() {
 	}
 	val, err := strconv.ParseInt(os.Args[3], 2, 2)
 	if err != nil {
-		log.Fatal(err, usage)
+		log.Fatal(usage)
 	}
 	println("Before:\t", strconv.FormatInt(n, 2))
 	if val == 1 {
 		n = n | (1 << i)
 	} else {
-		// println(strconv.FormatInt(n, 2), "^", strconv.FormatInt(1<<i, 2))
 		n = n &^ (1 << i)
 	}
 	println("After:\t", strconv.FormatInt(n, 2))
